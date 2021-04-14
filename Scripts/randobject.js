@@ -1,3 +1,5 @@
+// Hide Randomiser Button 
+document.querySelector("#randomiser").style.visibility = "hidden";
 
 // Function to Parse and Display API Data 
 const displayNFT = (data) => {
@@ -15,15 +17,23 @@ const displayNFT = (data) => {
     // Set variables with API data 
     const title = randomObj.collection.name; 
     const description = randomObj.collection.description;
-    const creator = `Created by: ${randomObj.creator.user.username}`;
     const nftImg = `<a href="${randomObj.permalink}" target=_blank> <img src=" ${randomObj.image_url} "/></a>`
 
     // add NFT data to document
     document.getElementById('nft_title').innerHTML = title;
     document.getElementById('nft_desc').innerHTML = description;
-    document.getElementById('nft_creator').innerHTML = creator;
     document.getElementById('image').innerHTML = nftImg;
     
+    // Try Catch Statement to avoid null username causing TypeError
+    try {
+        const creator = `Created by: ${randomObj.creator.user.username}`;
+        document.getElementById('nft_creator').innerHTML = creator;
+    } catch (error) {
+        if (error instanceof TypeError) {
+            document.getElementById('nft_creator').innerHTML = "";
+        }
+    }
+
     // If statement to avoid NFT's with null  or empylinks loading 
     if (randomObj.image_url) {
         document.getElementById( 'image' ).innerHTML = nftImg;
@@ -31,18 +41,10 @@ const displayNFT = (data) => {
         displayNFT(data)
     }
 
-    // if (randomObj.creator.user === null || randomObj.creator.user === '') {
-    //     document.getElementById( 'nft_creator' ).innerHTML = "Click  image to see Creator";
-    // } else {
-    //     return 
-    // }
-
-
 };
 
 
 // OpenSea API call 
-
 const options = {method: 'GET'};
 
 const retrievAsset = () => {
@@ -54,10 +56,13 @@ const retrievAsset = () => {
         const data = responseData.assets;
         displayNFT(data)
         document.querySelector(".spinner-wrapper").style.visibility = "hidden";
+        document.querySelector("#randomiser").style.visibility = "visible";
     })
     .catch(err => console.error(err));
 }
 
+
+// Run Application and Try Catch Statements - added due to receiving Type and Network Errors
 try {
     retrievAsset(); 
 } catch (error) {
@@ -69,3 +74,13 @@ try {
         console.log("Network Error Booooo!")
     }
 } 
+
+
+// Randomiser Button 
+var btn = document.getElementById('randomiser');
+
+btn.addEventListener("click", randBtn)
+
+function randBtn() {
+    retrievAsset();
+};
