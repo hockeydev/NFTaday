@@ -45,11 +45,14 @@ const displayNFT = (data) => {
 
 
 // OpenSea API call 
-const options = {method: 'GET'};
+const apiKey = '32da81e457f5464d85c603467226936c';
+const options = {method: 'GET',
+                 headers: {'X-API-KEY': apiKey}   
+                };
 
 const retrievAsset = () => {
     
-    const apiUrl = 'https://api.opensea.io/api/v1/assets?limit=50'
+    const apiUrl = 'https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=50'
     fetch(apiUrl, options)
     .then(response => {return response.json()})
     .then(responseData => {
