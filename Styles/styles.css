@@ -19,7 +19,7 @@ td, footer, header, menu, nav, section, video {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 50vw;
+    height: 60vw;
 }
 
 #banner h1 {
@@ -29,7 +29,6 @@ td, footer, header, menu, nav, section, video {
     margin-left: 80px;
     font-size: 8rem;
     text-shadow: 5px 5px 10px rgb(114, 187, 252);
-
 }
 
 
@@ -41,14 +40,18 @@ td, footer, header, menu, nav, section, video {
     /* OPTIONAL: Reverse the order of image and content */
     flex-direction: row;
     /* OPTIONAL: Spacing between items */
-    margin: 20px 20px;
+    margin: 20px 20px 400px 20px;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    /* width: 95vw; */
     height: 80vw;
     overflow-x: hidden;
     overflow-y: hidden;
     position: relative;
+    border: 2px solid;
+    border-image: linear-gradient(#f07e6e, #84cdfa, #5ad1cd);
+    border-image-slice: 1;
+    border-radius: 5%;
 }
 
 #image img {
@@ -294,7 +297,7 @@ a:visited {
     height: 100%;
     z-index: 9;
     pointer-events: none;
-    top: -10%;
+    top: -5%;
 }
 
 #scroll-wrapper-inner {
