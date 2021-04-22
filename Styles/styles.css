@@ -61,7 +61,7 @@ td, footer, header, menu, nav, section, video {
     border-image: linear-gradient(#f07e6e, #84cdfa, #5ad1cd);
     border-image-slice: 1;
     border-radius: 5%;
-    width: 500px;
+    min-width: 500px;
     margin-left: 50px;
     box-shadow: rgba(240, 126, 110, 1) 5px -50px 10px -20px, rgba(132, 205, 250, 1) 0px 50px 60px -30px;
 
@@ -550,11 +550,12 @@ a:visited {
 
 @media only screen
 
-  and (min-device-width: 414px)
+  and (min-device-width: 375px)
 
   and (max-device-width: 896px) 
 
   and (-webkit-min-device-pixel-ratio: 2) {
+
 
     
     #banner h1 {
@@ -579,7 +580,10 @@ a:visited {
     }
 
     .container {
-        height: 200vw;
+        display: flex;
+        flex-flow: column wrap;
+        height: 280vw;
+        margin-top: -80px;
         overflow-y: hidden;
         overflow-x: hidden;
         border: hidden;
@@ -592,16 +596,13 @@ a:visited {
         /* padding-bottom: 15px; */
         overflow-y: hidden;
         overflow-x: hidden;
-        /* margin-bottom: -800px; */
-        margin-top: 0;
-        margin-left: 0 ;
-        margin-right: 0;
-        visibility: hidden;
+        min-width: 350px;
+        max-width: 350px;
     }
 
     #image {
-        margin-top: -500px;
-        margin-left: 25px;
+        margin-top: 400px;
+        margin-right: 25px;
 
     }
 
@@ -620,33 +621,125 @@ a:visited {
         font-size: 2vw;
         font-family: 'Bungee', cursive;
         margin-bottom: 10px;
-        margin-top: 110px;
+        margin-top: 50px;
+        margin-left: 15px;
     }
     
     #nft_desc {
-        font-size: 1vw;
+        font-size: 2vw;
         font-family: 'Open Sans', sans-serif;
-        height: 300px;
+        min-height: 100px;
+        max-height: 170px;
         margin-right: 25px;
-        margin-top: 0px;
+        margin-left: 15px;
         padding-right: 15px;
+        display: relative;
     }
     
     #nft_creator {
-        font-size: 1vw;
+        font-size: 2vw;
         font-family: 'Open Sans', sans-serif;
-        margin-top: -250px;
+        margin-top: -20px;
+        margin-left: 15px;
+        display: relative;
     }
 
     #randomiser {
-        min-width: 10px;
-        min-height: 10px;
-        font-size: 1vh;
-        margin-right: 300px;
+        min-width: 50px;
+        min-height: 50px;
+        font-size: 2vh;
+        /* margin-top: -300px; */
+        margin-left: 125px;
+        display: relative;
     }
 
+    @keyframes ring {
+        0% {
+          width: 10px;
+          height: 10px;
+          opacity: 1;
+        }
+        100% {
+          width: 50px;
+          height: 50px;
+          opacity: 0;
+        }
+      }
 
+      
+
+    .footer {
+        font-size: 1.5vh;
+    }
 
 
 
 }
+
+
+
+
+@media only screen
+
+  and (min-device-width: 768px)
+
+  and (max-device-width: 1024px) 
+
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+
+    #banner h1 {
+        font-family: 'Bungee Shade', cursive;
+        margin-left: 25px;
+        font-size: 5rem;
+    }
+
+    #scroll-wrapper {
+        visibility: hidden;
+    }
+
+    .spinner-wrapper {
+        margin-top: -350px;
+    }
+
+    .container {
+        height: 200vw;
+    }
+
+
+    .container__feature {
+        /* Take the remaining width */
+        flex: 1;
+        padding-left: 50px;
+        /* padding-bottom: 15px; */
+        overflow-y: hidden;
+        overflow-x: hidden;
+        min-width: 600px;
+        max-width: 600px;
+
+    }
+
+    #image img {
+        padding: 10px;
+        width: 450px;
+        height: 450px;
+        margin-left: 25px;
+        /* border: none; */
+        /* box-shadow: rgba(240, 126, 110, 1) 5px -50px 10px -20px, rgba(132, 205, 250, 1) 10px 50px 60px -30px; */
+        box-shadow: none;
+    }
+
+    #nft_creator {
+        font-size: 2vw;
+        font-family: 'Open Sans', sans-serif;
+        margin-top: 20px;
+        margin-left: 15px;
+        display: relative;
+    }
+
+    #randomiser {
+        margin-left: 250px;
+    }
+
+    
+  }
