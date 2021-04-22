@@ -40,7 +40,7 @@ td, footer, header, menu, nav, section, video {
     /* OPTIONAL: Reverse the order of image and content */
     flex-direction: row;
     /* OPTIONAL: Spacing between items */
-    margin: 20px 20px 400px 20px;
+    margin: 20px 0px 400px 0px;
     justify-content: center;
     align-items: center;
     /* width: 95vw; */
@@ -48,7 +48,8 @@ td, footer, header, menu, nav, section, video {
     overflow-x: hidden;
     overflow-y: hidden;
     position: relative;
-    border: 2px solid;
+    /* border: 2px solid; */
+    border-top: 2px solid;
     border-image: linear-gradient(#f07e6e, #84cdfa, #5ad1cd);
     border-image-slice: 1;
     border-radius: 5%;
@@ -539,4 +540,113 @@ a:visited {
         -o-transform: scale(1, 0);
         transform: scale(1, 0);
     }
+}
+
+
+
+
+
+/* Mobile Queries */
+
+@media only screen
+
+  and (min-device-width: 414px)
+
+  and (max-device-width: 896px) 
+
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    
+    #banner h1 {
+            font-family: 'Bungee Shade', cursive;
+            /* letter-spacing: 5px; */
+            margin-top: 2rem;
+            margin-left: 125px;
+            font-size: 3rem;
+            text-shadow: 5px 5px 10px rgb(114, 187, 252);
+    }
+
+    #scroll-wrapper {
+        visibility: hidden;
+    }
+
+    .spinner {
+        width: 20px;
+        height: 20px;
+        animation: spin 1s linear infinite;
+        z-index: 10;
+        margin-left: 45%;
+    }
+
+    .container {
+        height: 200vw;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        border: hidden;
+    }
+
+    .container__feature {
+        /* Take the remaining width */
+        flex: 1;
+        padding-left: 50px;
+        /* padding-bottom: 15px; */
+        overflow-y: hidden;
+        overflow-x: hidden;
+        /* margin-bottom: -800px; */
+        margin-top: 0;
+        margin-left: 0 ;
+        margin-right: 0;
+        visibility: hidden;
+    }
+
+    #image {
+        margin-top: -500px;
+        margin-left: 25px;
+
+    }
+
+
+    #image img {
+        padding: 10px;
+        width: 250px;
+        height: 250px;
+        margin-left: 25px;
+        /* border: none; */
+        /* box-shadow: rgba(240, 126, 110, 1) 5px -50px 10px -20px, rgba(132, 205, 250, 1) 10px 50px 60px -30px; */
+        box-shadow: none;
+    }
+
+    #nft_title {
+        font-size: 2vw;
+        font-family: 'Bungee', cursive;
+        margin-bottom: 10px;
+        margin-top: 110px;
+    }
+    
+    #nft_desc {
+        font-size: 1vw;
+        font-family: 'Open Sans', sans-serif;
+        height: 300px;
+        margin-right: 25px;
+        margin-top: 0px;
+        padding-right: 15px;
+    }
+    
+    #nft_creator {
+        font-size: 1vw;
+        font-family: 'Open Sans', sans-serif;
+        margin-top: -250px;
+    }
+
+    #randomiser {
+        min-width: 10px;
+        min-height: 10px;
+        font-size: 1vh;
+        margin-right: 300px;
+    }
+
+
+
+
+
 }
