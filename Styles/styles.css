@@ -64,7 +64,7 @@ body { padding: env(safe-area-inset, 0px); }
     border-image-slice: 1;
     border-radius: 5%;
     width: 500px;
-    margin-left: 50px;
+    margin-left: 80px;
     box-shadow: rgba(240, 126, 110, 1) 5px -50px 10px -20px, rgba(132, 205, 250, 1) 0px 50px 60px -30px;
 
 }
